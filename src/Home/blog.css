@@ -1,0 +1,39 @@
+
+.bg-vw--bx {
+    max-width: calc(100% - 10px);
+    min-width: 600px;
+}
+
+.bg-vw {
+    margin: auto;
+    width: 100%;
+    border-top: thin solid #ddd;
+    padding: 1.8rem 0;
+}
+
+.bg-vw:nth-child(1) {
+    border-top: none;
+}
+
+.bg-vw header {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.bg-vw span {
+  color: #898989;
+}
+
+.bg-vw a {
+  text-decoration: none;
+  color: initial;
+}
+
+.bg-dt--bx {
+    width: 100%;
+}
+
+.bg-dt {
+    margin: auto;
+    width: 100%;
+}

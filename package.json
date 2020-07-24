@@ -1,0 +1,60 @@
+{
+  "name": "blogbuilder",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "highlight.js": "^9.18.1",
+    "react": "^16.13.1",
+    "react-contextmenu": "^2.13.0",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.10.0",
+    "react-markdown": "^4.3.1",
+    "react-markdown-renderer": "^1.4.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^2.1.8",
+    "react-textarea-autosize": "^8.0.1",
+    "styled-components": "^5.1.1",
+    "uuid": "^8.1.0"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "description": "A Free Blog Builder Site",
+  "main": "index.js",
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joshua0707/blogbuilder.git"
+  },
+  "author": "Odelola Joshua",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Joshua0707/blogbuilder/issues"
+  },
+  "homepage": "https://github.com/Joshua0707/blogbuilder#readme"
+}

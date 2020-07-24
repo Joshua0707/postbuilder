@@ -1,0 +1,10 @@
+
+
+.bd_posts {
+	padding: 1rem;
+}
+
+.bd_posts h1 {
+	font-weight: normal;
+	text-transform: capitalize;
+}
