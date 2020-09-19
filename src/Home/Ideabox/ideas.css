@@ -1,38 +1,26 @@
 .mk-post {
-	position: fixed;
-	bottom: 20px;
-	right: 20px;
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	box-shadow: 1px 1px 3px #ddd, 3px 3px 5px #eee;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transition: ease-in-out .3s;
-	color: teal;
-	background: transparent;
-	z-index: 3;
+	text-decoration: none;
 }
 
 .mk-post div {
-	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-	background-color: red;
-	z-index: -1;
-	border-radius: 50%;
-	background: teal;
-	clip-path: circle(0 at 0);
-	transition: ease-in-out .3s;
+	width: 800px;
+	max-width: calc(100% - 10px);
+	margin: 20px auto;
+	border-radius: 20px;
+	display: flex;
+	flex-flow: wrap row;
+	align-items: center;
+	justify-content: space-around;
 }
 
-.mk-post:hover {
-	color: white;
+.mk-post div img {
+	width: auto;
+	height: auto;
+	max-width: 450px;
+	max-height: 250px;
 }
 
-.mk-post:hover div {
-	clip-path: circle(100% at 0);
+.mk-post div h1 {
+	font-weight: normal;
+	color: black;
 }

@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import './App.css';
 import PostBuilder from './PostBuilder';
 import { AppWrapper } from './style';
 import { Route, Redirect, Switch, withRouter } from 'react-router-dom';
 import Home from './Home';
+// import Explore from './Explore';
+import Notification from './Notification';
+import { PostLoader } from './Loader';
 import uuid from 'uuid/index';
 import Navbar from './Navbar';
+import Settings from './Settings';
+import Profile from './Profile';
+import LoginContainer from './User/Login';
+import RegisterContainer from './User/Register';
+import LogoutContainer from './User/Logout';
+
+const Explore = lazy(() => import('./Explore'));
 
 const App = ({ location }) => {
 
@@ -120,13 +130,25 @@ const App = ({ location }) => {
   const { pathname } = location;
   return (
     <AppWrapper>
-      { <Navbar location={location}></Navbar> || pathname !== 'login' }
+      { pathname === '/login' || pathname === '/register' || <Navbar location={location}></Navbar> }
       <Switch>
         <Route exact path="/">
           <Redirect from={"/"} to={"/home"} />
         </Route>
-        <Route path="/home" render={({ match }) => <Home posts={posts} match={match} />} />
+        <Route path="/home" component={Home} />
+        {/*<Route path="/explore" render={({ match }) => <Explore posts={posts} match={match} />} />*/}
+        <Route path="/explore" render={({ match }) => (
+          <Suspense fallback={PostLoader}>
+            <Explore posts={posts} match={match} />
+          </Suspense>
+        )} />
+        <Route path="/profile" component={Profile} />
+        <Route path="/settings" component={Settings} />
+        <Route path="/notification" component={Notification} />
         <Route path="/build" render={({ match }) => <PostBuilder makePost={makePost} />} />
+        <Route path="/login" component={LoginContainer} />
+        <Route path="/register" component={RegisterContainer} />
+        <Route path="/logout" component={LogoutContainer} />
         <Route path="*">
           <Redirect from={"/"} to={"/home"} />
         </Route>

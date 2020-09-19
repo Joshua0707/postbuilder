@@ -1,0 +1,6 @@
+.pg-ld {
+	background: url(../Assets/posts.png) no-repeat top center;
+	background-size: cover;
+	height: calc(100vh - var(--nav-height));
+	width: calc(100vh - 30px);
+}

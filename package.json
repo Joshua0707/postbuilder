@@ -49,12 +49,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Joshua0707/blogbuilder.git"
+    "url": "git+https://github.com/Joshua0707/postbuilder.git"
   },
   "author": "Odelola Joshua",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Joshua0707/blogbuilder/issues"
+    "url": "https://github.com/Joshua0707/postbuilder/issues"
   },
-  "homepage": "https://github.com/Joshua0707/blogbuilder#readme"
+  "homepage": "https://github.com/Joshua0707/postbuilder"
 }

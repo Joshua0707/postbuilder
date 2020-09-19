@@ -1,4 +1,24 @@
+:root {
+	--base-color: #009688;
+	--shade04: #b2dfdb;
+	--shade03: #80cbc4;
+	--shade02: #26a69a;
+	--shade01: #4db6ac;
+	--shade10: #00897b;
+	--shade20: #00796b;
+	--shade30: #00695c;
+	--shade40: #004d40;
+	--dark-color: #001f1a;
+	--dark-alt-color: #343434;
+	--light-color: #e0f2f1;
+	--light-alt-color: #f9f9f9;
+	--light-transparent: #f9f9f9a0;
 
+
+	--nav-height: 70px;
+
+	--text-color: black;
+}
 
 .bd_posts {
 	padding: 1rem;

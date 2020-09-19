@@ -1,103 +1,98 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { 
-	FaCaretDown,
-	FaDashcube,
-	FaBell,
-	FaUser
-	} from 'react-icons/fa';
+import './nav.css'
+
+import {
+	BsPerson,
+	BsDashSquare,
+	BsBell,
+	BsFiles,
+	BsGear,
+	BsArrowBarRight
+	 } from 'react-icons/bs';
 
 const Navbar = ({ location }) => {
+
 	const [ acctDd, setAcctDd ] = React.useState(false);
+	const [ navSize, setNavSize ] = React.useState(window.innerWidth);
+	const [ navToggle, setNavToggle ] = React.useState(false);
+	const dropElem = React.useRef(null);
+
 	const toggleDd = () => {
 		setAcctDd(state => !state);
 	}
+
+	const closeToggle = () => {
+		setNavToggle(false);
+		setAcctDd(false)
+	}
+
+	const eventHandler = (e) => {
+		if (dropElem && dropElem.current) {
+			const { left, right, bottom, top } = dropElem.current.getBoundingClientRect();
+			const condition = (e.clientX < left || e.clientX > right) && (e.clientY < top || e.clientY > bottom);
+			if (condition) {
+				console.log(true)
+				setAcctDd(false);
+			}
+		}
+	}
+
+	React.useEffect(() => {
+		window.addEventListener('resize', (e) => {
+			setNavSize(window.innerWidth);
+			closeToggle();
+		});
+	})
+
+
+	React.useEffect(() => {
+		if (acctDd) {
+			window.addEventListener('click', eventHandler)
+		}
+		return () => window.removeEventListener('click', eventHandler)
+	}, [ acctDd ])
+
+
 	return (
-		<NavWrapper>
+		<nav className="nv-wr">
 			<div className="nv-bd">
 				<Link to={'/home'}>PostHub</Link>
 			</div>
-			<div className="nv-ut"> 
-				<Link to={'/home'}> <FaDashcube />Feeds</Link>
-				<Link to={'/home'}> <FaBell />Notifications</Link>
+			{
+				navSize < 580 ? (
+					<span className="nv-tg-bx">
+						<span className={`nv-tg ${navToggle ? 'close' : ''}`} onClick={
+							() => setNavToggle(state => !state)
+						}>
+							<span></span>
+							<span></span>
+						</span>
+					</span>
+				) : ''
+			}
+			<div className={`nv-ut ${navSize < 580 && navToggle ? 'show' : ''}`}>
+				<Link to={'/home'} onClick={closeToggle}> <BsDashSquare />Dashboard</Link>
+				<Link to={'/explore'} onClick={closeToggle}> <BsFiles />Explore</Link>
+				<Link to={'/notification'} onClick={closeToggle}> <BsBell />Notifications</Link>
 				<span className="dp-dn">
-					<span onClick={toggleDd}> 
-						<FaUser /> 
-						Account  
+					<span onClick={toggleDd}>
+						<BsPerson />
+						Account
 					</span>
 					{
-						acctDd ? (
-							<div>
-								<Link to={'/admin'}>My Profile</Link>
-								<Link to={'/admin'}>Settings</Link>
-								<Link to={'/admin'}>Logout</Link>
+						acctDd || navSize < 580 ? (
+							<div ref={dropElem}>
+								<Link to={'/profile'} onClick={closeToggle} ><BsPerson />My Profile</Link>
+								<Link to={'/settings'} onClick={closeToggle}><BsGear />Settings</Link>
+								<Link to={'/logout'} onClick={closeToggle}><BsArrowBarRight />Logout</Link>
 							</div>
 						) : ''
-				 	}
+					}
 				</span>
 			</div>
-		</NavWrapper>
+		</nav>
 	)
 }
-
-const NavWrapper = styled.nav`
-	width: 100%;
-	height: 70px;
-	background: #fff;
-	box-shadow: 1px 1px 3px #ddd, 3px 3px 5px #eee;
-
-	a {
-		text-decoration: none;
-		color: #1b1b1b;
-	}
-
-	.nv-bd {
-		display: inline-block;
-		line-height: 70px;
-		margin-left: 20px;
-		font-size: 24px;
-	}
-
-	.nv-ut {
-		float: right;
-		line-height: 70px;
-
-		a, .dp-dn {
-			display: inline-block;
-			margin-right: 15px;
-			svg {
-				margin-right: 10px;
-			}
-		}
-
-		.dp-dn {
-			position: relative;
-			span {
-				color: #1b1b1b;
-				cursor: pointer;			
-			}
-
-			div {
-				min-width: 160px;
-				position: absolute;
-				top: 60px;
-				right: 0px;
-				background: #fff;
-				box-shadow: 1px 1px 3px #ddd, 3px 3px 5px #eee;
-				a {
-					width: 100%;
-					display: block;
-					text-align: center;
-					border-sizing: border-box;
-					padding: 7px;
-					line-height: initial;
-					color: #1b1b1b;
-				}
-			}
-		}
-	}
-
-`
 
 export default Navbar;

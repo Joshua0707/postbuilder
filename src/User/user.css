@@ -1,0 +1,167 @@
+
+.login-pg,
+.register-pg {
+	padding-top: 10%;
+	box-sizing: border-box;
+}
+
+.login-pg header,
+.register-pg header {
+
+}
+
+.login-pg header h1,
+.register-pg header h1 {
+	font-weight: 500;
+	font-size: 2.5rem;
+	text-align: center;
+}
+
+.login-pg header p,
+.register-pg header p {
+	text-align: center;
+	font-size: 17px;
+}
+
+.login-pg header span.cust-emoji {
+	direction: ltr;
+}
+
+form.user-form {
+	width: 600px;
+	max-width: calc(100% - 20px);
+	margin: auto;
+}
+
+form.user-form .form-rl {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+form.user-form div.input-vw {
+	position: relative;
+	min-width: 400px;
+	outline: none;
+	border: none;
+	transition: background ease-in-out 300ms;
+	margin: 10px auto;
+}
+
+form.user-form div.input-vw input {
+	width: 400px;
+	max-width: 100%;
+	height: 100%;
+	padding: 25px 10px 10px 45px;
+	outline: none;
+	border: none;
+	box-sizing: border-box;
+	transition: border ease-in-out 300ms;
+	background: var(--light-alt-color);
+	font-size: 16px;
+}
+
+form.user-form div.input-vw input[type=password] {
+	padding-right: 60px;
+}
+
+form.user-form div.input-vw label {
+	position: absolute;
+	left: 45px;
+	top: 0;
+	bottom: 0;
+	padding: .5rem 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	pointer-events: none;
+	transition: all ease-in-out 300ms, justify-content ease-in-out 300ms;
+	color: #898989;
+}
+
+form.user-form div.input-vw input:focus + label,
+form.user-form div.input-vw input:valid + label {
+	justify-content: flex-start;
+	font-size: .7rem;
+}
+
+form.user-form div.input-vw span.forget {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 10px;
+}
+
+form.user-form div.input-vw span.forget a {
+	text-decoration: none;
+	font-size: 14px;
+	color: var(--base-color);
+}
+
+form.user-form div.input-vw span.ico {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+form.user-form div.input-vw span.ico svg {
+	color: #898989;
+}
+
+form.user-form div.input-sb {
+	width: 400px;
+	max-width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.register-pg form.user-form div.input-sb {
+	justify-content: center;
+}
+
+form.user-form div.input-sb a {
+	text-decoration: none;
+	color: var(--shade30);
+}
+
+form.user-form div.input-sb button {
+	background-color: var(--base-color);
+	border: none;
+	color: white;
+	padding: 12px 25px;
+	margin: 10px 3px;
+	cursor: pointer;
+	font-size: 15px;
+	outline: none;
+	transition: background ease-in-out 300ms;
+}
+
+form.user-form div.input-sb button:focus,
+form.user-form div.input-sb button:hover {
+	background-color: var(--shade10);
+}
+
+.register-pg form.user-form div.input-sb button {
+	/*border-radius: 50px;*/
+}
+
+.register-pg form.user-form div.alt-div {
+	width: 400px;
+	max-width: 100%;
+	margin-top: 10px;
+}
+
+.register-pg form.user-form div.alt-div a {
+	text-decoration: none;
+	color: var(--shade30);
+}
