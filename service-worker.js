@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Joshua0707/blogbuilder/precache-manifest.1e2a396fe9875d6b023424be25c29e64.js"
+  "/Joshua0707/postbuilder/precache-manifest.b0d4f4fc7da16c379ddbe3e297f87799.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/Joshua0707/blogbuilder/index.html", {
+workbox.routing.registerNavigationRoute("/Joshua0707/postbuilder/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
